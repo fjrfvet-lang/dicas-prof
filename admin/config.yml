@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: fjrfvet-lang/dicas-prof
+  branch: main
+
+media_folder: "public/images" # Onde as fotos novas serão guardadas
+public_folder: "/images"
+
+collections:
+  - name: "dicas"
+    label: "Minhas Dicas"
+    folder: "content/dicas" # Onde as dicas serão guardadas como ficheiros individuais
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Categoria", name: "category", widget: "select", options: ["Internet", "IA", "Mobile", "Office"] }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Conteúdo da Dica", name: "body", widget: "markdown" }
